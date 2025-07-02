@@ -1,0 +1,14 @@
+# Kconfig - QMA6100P sensor driver
+
+#
+# Copyright (c) 2023 Seeed Studio
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+config QMA6100P
+    bool "QMA6100P 3-Axis Accelerometer"
+    default y
+    depends on I2C
+    help
+      Enable this to support the QMA6100P accelerometer. 
