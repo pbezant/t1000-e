@@ -1,11 +1,7 @@
-cmake_minimum_required(VERSION 3.13.1)
-include($ENV{ZEPHYR_BASE}/cmake/app/boilerplate.cmake NO_POLICY_SCOPE)
-project(t1000-e)
+cmake_minimum_required(VERSION 3.20.0)
+
+find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
+project(app)
 
 FILE(GLOB app_sources ../src/*.c*)
 target_sources(app PRIVATE ${app_sources})
-
-# Add out of tree drivers
-list(APPEND ZEPHYR_EXTRA_MODULES
-    ../drivers/sensor/qma6100p
-    )
